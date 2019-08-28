@@ -4,6 +4,7 @@ public class Worker {
     private int id;
     private List<String> skills;
     private List<Holidays> holidays;
+
     public int getId() {
         return id;
     }
