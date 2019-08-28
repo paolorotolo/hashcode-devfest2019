@@ -5,6 +5,7 @@ public class Task  {
     private int day_per_worker;
     private String skill;
     private List<Integer> task_dip;
+    boolean done = false;
 
 
 
