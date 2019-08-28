@@ -37,20 +37,17 @@ public class Main {
     void start(){
         parserIn();
 
-        TestAlgorithm algo = new TestAlgorithm();
-        algo.getPrioritizedTasks(
-                workers,
-                tasks,
-                goals
-        );
-
         List<Task> priorityTask = new ArrayList<>();
         //priorityTask.sort(Comparator.comparing(Task::getDay_per_worker));
         for (Task task: priorityTask
              ) {
             task.setWorkersCanDoTask(Solver.filterWorker(task,workers));
-            Solver.getListDay(task,duration);
+
         }
+        Solver.getListDay(tasks,duration);
+
+
+
 
 
         // OutputWriter.INSTANCE.printOutput("output.txt");
