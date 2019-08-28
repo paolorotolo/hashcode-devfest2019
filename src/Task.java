@@ -3,6 +3,7 @@ public class Task {
     private int effort;
     private String [] skills;
     private int [] task_dip;
+    private boolean has_dependency;
 
 
 }
