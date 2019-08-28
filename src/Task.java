@@ -1,10 +1,22 @@
 import java.util.List;
 
-public class Task {
+public class Task  {
     private int id;
     private int day_per_worker;
     private String skill;
     private List<Integer> task_dip;
+
+
+
+    private List<Worker> workersCanDoTask;
+
+    public List<Worker> getWorkersCanDoTask() {
+        return workersCanDoTask;
+    }
+
+    public void setWorkersCanDoTask(List<Worker> workersCanDoTask) {
+        this.workersCanDoTask = workersCanDoTask;
+    }
 
     public int getId() {
         return id;
@@ -37,4 +49,6 @@ public class Task {
     public void setTask_dip(List<Integer> task_dip) {
         this.task_dip = task_dip;
     }
+
+
 }
