@@ -16,7 +16,6 @@ public class Solver {
             Day day= new Day();
             day.index=i+1;
             List<Worker> listWorker= task.getWorkersCanDoTask();
-            task
         }
         return listDay;
     }
