@@ -20,8 +20,7 @@ public class Solver {
                  ) {
                 List<Worker> listWorker= task.getWorkersCanDoTask();
                 int effort= task.getDay_per_worker();
-                for (Worker worker: listWorker
-                ) {
+                for (Worker worker: listWorker) {
                     if(effort==0) break;
                     if (getAvalaible(worker,workerImpegnati)){
                         workerImpegnati.add(worker.getId());

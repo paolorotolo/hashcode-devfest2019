@@ -37,20 +37,25 @@ public class Main {
     void start(){
         parserIn();
 
-        List<Task> priorityTask = new ArrayList<>();
+        TestAlgorithm algo = new TestAlgorithm();
+
+        List<Task> priorityTask = algo.getPrioritizedTasks(workers,
+                tasks,
+                goals);
+
         //priorityTask.sort(Comparator.comparing(Task::getDay_per_worker));
-        for (Task task: priorityTask
+        for (Task task: tasks
              ) {
             task.setWorkersCanDoTask(Solver.filterWorker(task,workers));
 
         }
-        Solver.getListDay(tasks,duration);
+        List<Day> listDays = Solver.getListDay(tasks,duration);
 
 
 
 
 
-        // OutputWriter.INSTANCE.printOutput("output.txt");
+        OutputWriter.INSTANCE.printOutput("output.txt",listDays );
 
     }
 
