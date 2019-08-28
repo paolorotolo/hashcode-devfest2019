@@ -42,9 +42,9 @@ public class Main {
         for (Task task: priorityTask
              ) {
             task.setWorkersCanDoTask(Solver.filterWorker(task,workers));
-            Solver.getListDay(task,duration);
-        }
 
+        }
+        Solver.getListDay(tasks,duration);
 
 
 
