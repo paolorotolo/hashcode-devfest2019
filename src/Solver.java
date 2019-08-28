@@ -6,7 +6,6 @@ public class Solver {
 
     public static List<Worker> filterWorker(Task task, List<Worker> workers){//filtro in base alle skills
 
-
         return workers.stream().filter(w-> w.getSkills().equals(task.getSkill())).collect(Collectors.toList());
     }
 
@@ -30,6 +29,7 @@ public class Solver {
                 }
             }
 
+            listDay.add(day);
             //task.setDay_per_worker(task.getDay_per_worker()-listWorker.size());
         }
         return listDay;
