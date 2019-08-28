@@ -39,6 +39,13 @@ public class Main {
     void start(){
         parserIn();
 
+        TestAlgorithm algo = new TestAlgorithm();
+        algo.getPrioritizedTasks(
+                workers,
+                tasks,
+                goals
+        );
+
     }
 
 
