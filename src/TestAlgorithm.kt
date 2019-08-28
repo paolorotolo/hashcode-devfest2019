@@ -30,6 +30,18 @@ class TestAlgorithm() {
 
         dependencies.reverse()
 
+        var noGoalTask: List<Task>? = null
+
+        goals.forEach {goal ->
+            noGoalTask = tasks.filter {
+                it.id != goal.id_task
+            }
+        }
+
+        noGoalTask?.let {
+            dependencies.addAll(noGoalTask!!)
+        }
+
         return dependencies
     }
 

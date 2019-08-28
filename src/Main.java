@@ -52,6 +52,9 @@ public class Main {
             Solver.getListDay(task,duration);
         }
 
+
+        // OutputWriter.INSTANCE.printOutput("output.txt");
+
     }
 
 
