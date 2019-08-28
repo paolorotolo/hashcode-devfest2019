@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Worker {
     private int id;
-    private List<String> skills;
+    private String skills;
     private List<Holidays> holidays;
 
     public int getId() {
@@ -13,11 +13,11 @@ public class Worker {
         this.id = id;
     }
 
-    public List<String> getSkills() {
+    public String getSkills() {
         return skills;
     }
 
-    public void setSkills(List<String> skills) {
+    public void setSkills(String skills) {
         this.skills = skills;
     }
 

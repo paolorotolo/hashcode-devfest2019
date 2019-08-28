@@ -1,9 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     ArrayList<Worker> workers = new ArrayList();
@@ -27,7 +25,7 @@ public class Main {
             line = reader.readLine();
         }*/
 
-         Main main = new Main();
+        Main main = new Main();
         main.start();
         System.out.println("hh");
 
@@ -45,6 +43,14 @@ public class Main {
                 tasks,
                 goals
         );
+
+        List<Task> priorityTask = new ArrayList<>();
+        //priorityTask.sort(Comparator.comparing(Task::getDay_per_worker));
+        for (Task task: priorityTask
+             ) {
+            task.setWorkersCanDoTask(Solver.filterWorker(task,workers));
+            Solver.getListDay(task,duration);
+        }
 
     }
 
@@ -81,7 +87,7 @@ public class Main {
 
                 }
                 worker.setHolidays(holidays);
-                worker.setSkills(skills);
+                worker.setSkills(skills.get(0));
                 workers.add(worker);
 
             }
@@ -121,12 +127,19 @@ public class Main {
 
 
 
-
-
-
         }catch (Exception e){
             System.out.println("prima parte");
 
+        }
+    }
+
+    class SortbyDeadline implements Comparator<Goal>
+    {
+        // Used for sorting in ascending order of
+        // roll number
+        public int compare(Goal a, Goal b)
+        {
+            return a.getDeadline() - b.getDeadline();
         }
     }
 
