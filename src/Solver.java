@@ -6,7 +6,6 @@ public class Solver {
 
     public static List<Worker> filterWorker(Task task, List<Worker> workers){//filtro in base alle skills
 
-
         return workers.stream().filter(w-> w.getSkills().equals(task.getSkill())).collect(Collectors.toList());
     }
 
@@ -15,6 +14,7 @@ public class Solver {
         for(int i =0; i<duration; i++){
             ArrayList<Integer> workerImpegnati = new ArrayList<>();
             Day day= new Day();
+            List<Worker> workerList = new ArrayList<>();
             day.index=i+1;
             for (Task task: tasks
                  ) {
@@ -25,10 +25,14 @@ public class Solver {
                     if (getAvalaible(worker,workerImpegnati)){
                         workerImpegnati.add(worker.getId());
                         task.setDay_per_worker(task.getDay_per_worker()-1);
+                        workerList.add(worker);
                     }
                 }
+                day.mapDay.put(task, workerList);
+
             }
 
+            listDay.add(day);
             //task.setDay_per_worker(task.getDay_per_worker()-listWorker.size());
         }
         return listDay;

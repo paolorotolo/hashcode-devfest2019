@@ -16,13 +16,13 @@ object OutputWriter {
 
             otherThing.forEach { task, workers ->
                 workers.forEach {worker ->
-                    tasksString.append("${task.id}:${worker.id}")
+                    tasksString.append(" ${worker.id}:${task.id}")
                 }
             }
 
             val thingThatIsNotId = tasksString.toString()
 
-            out.println("$id $thingThatIsNotId")
+            out.println("$id$thingThatIsNotId")
         }
 
         // Add line
